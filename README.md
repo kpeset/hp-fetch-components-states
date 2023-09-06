@@ -12,7 +12,7 @@ Je vous invite aussi à lire le Readme de chaque branche.
 
 ## Les branches
 Voici le détail de chacune des branches :
-- step_01 : **React - Notre premiere requête API**
+- **step_01** : [**React - Notre premiere requête API**](https://github.com/kpeset/hp-support-for-react/tree/step_01)
 
 ## Fonctionnalités actuelles
 ### 1ère itération
