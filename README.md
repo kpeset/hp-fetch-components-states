@@ -1,4 +1,6 @@
 # React : Atelier "fil rouge" Harry Potter
+![Apercu du resultat final](https://github.com/kpeset/hp-support-for-react/blob/main/public/github_pictures/title_poudlard.JPG?raw=true)
+
 
 ## Objectif de l'atelier
 Nous utiliserons cet atelier "fil rouge" lors de nos group support. C'est sur cette applications que nous testerons les fonctionnalités React que l'on va apprendre lors de notre projet 2.
