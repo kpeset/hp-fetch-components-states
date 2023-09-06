@@ -6,6 +6,7 @@ Nous utiliserons cet atelier "fil rouge" lors de nos group support. C'est sur ce
 ## Utilisation
 Chaque fois que nous allons coder une feature, nous allons créer une branche spécifique.
 De cette façon, vous pourrez aller de branches en branches pour voir le code que l'on a crée et aussi l'analyser.
+Je vous invite aussi à lire le Readme de chaque branche.
 
 ## Fonctionnalités actuelles
 ### 1ère itération
