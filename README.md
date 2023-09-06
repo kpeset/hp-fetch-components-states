@@ -1,8 +1,13 @@
-# React + Vite
+# React : Atelier "fil rouge" Harry Potter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objectif de l'atelier
+Nous utiliserons cet atelier "fil rouge" lors de nos group support. C'est sur cette applications que nous testerons les fonctionnalités React que l'on va apprendre lors de notre projet 2.
 
-Currently, two official plugins are available:
+## Utilisation
+Chaque fois que nous allons coder une feature, nous allons créer une branche spécifique.
+De cette façon, vous pourrez aller de branches en branches pour voir le code que l'on a crée et aussi l'analyser.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fonctionnalités actuelles
+### 1ère itération
+- Ajout d'un bouton qui nous permet d'afficher tous les élèves de Griffondor dans des cartes
+- Affiche uniquement les personnages qui possèdent une photo
