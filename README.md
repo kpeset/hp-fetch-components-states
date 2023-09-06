@@ -59,3 +59,4 @@ Néanmoins, nous recevoir de la part de l'API plusieurs personnages. C'est pour 
 ```
 
 Nous utilisons ici la méthode `map` qui permet à chaque tour de boucle de créer un composant Gryfondor.
+Le code `character.image &&` permet de stipuler que nous n'afficherons les données des objets dont la propriété image n'est pas vide.
