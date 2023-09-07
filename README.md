@@ -16,5 +16,6 @@ Voici le détail de chacune des branches :
 
 ## Fonctionnalités actuelles
 ### 1ère itération
+- Créer une requête API
 - Ajout d'un bouton qui nous permet d'afficher tous les élèves de Griffondor dans des cartes
 - Affiche uniquement les personnages qui possèdent une photo
