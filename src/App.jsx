@@ -19,9 +19,11 @@ function App() {
       </header>
       <section className="homepage_content">
         <div className="panel">
-          <h2>Griffondor</h2>
-          <p>Cliquez sur le bouton pour afficher les élèves de Griffondor.</p>
-          <button onClick={getCharacters}>AFFICHER</button>
+          <h2>Maisons de Poudlard</h2>
+          <p>Cliquez sur le bouton pour afficher les élèves de la maison correspondante.</p>
+          <div className="nav_houses">
+            <button onClick={getCharacters}>GRYFFONDOR</button>
+          </div>
         </div>
         <div className="cards">
           {data.map((character) => character.image && <GryfondorCard key={character.id} character={character} />)}
