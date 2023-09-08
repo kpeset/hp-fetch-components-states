@@ -1,17 +1,21 @@
-import GryfondorCard from "./components/GryfondorCard"
 import axios from "axios"
 import { useState } from "react"
+import CharacterCard from "./components/CharacterCard"
 
 function App() {
   const [data, setData] = useState([])
 
-  const getCharacters = () => {
+  const getCharacters = (event) => {
+
+    const house = event.target.name
+
     axios
-      .get('https://hp-api.onrender.com/api/characters/house/gryffindor')
+      .get(`https://hp-api.onrender.com/api/characters/house/${house}`)
       .then((response) => {
         setData(response.data)
       })
   }
+
   return (
     <>
       <header className="homepage_header">
@@ -22,12 +26,14 @@ function App() {
           <h2>Maisons de Poudlard</h2>
           <p>Cliquez sur le bouton pour afficher les élèves de la maison correspondante.</p>
           <div className="nav_houses">
-            <button onClick={getCharacters}>GRYFFONDOR</button>
+            <button name="gryffindor" onClick={getCharacters}>GRYFFONDOR</button>
+            <button name="hufflepuff" onClick={getCharacters}>POUFSOUFFLE</button>
+            <button name="ravenclaw" onClick={getCharacters}>SERDAIGLE</button>
+            <button name="slytherin" onClick={getCharacters}>SERPENTARD</button>
           </div>
         </div>
         <div className="cards">
-          {data.map((character) => character.image && <GryfondorCard key={character.id} character={character} />)}
-
+          {data.map((character) => character.image && <CharacterCard key={character.id} character={character} />)}
         </div>
       </section>
 
