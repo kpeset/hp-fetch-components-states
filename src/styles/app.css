@@ -76,6 +76,7 @@ body {
     cursor: pointer;
     margin-right: 2rem;
     margin-left: 2rem;
+    overflow: hidden;
 }
 
 .card>h2 {
@@ -90,7 +91,9 @@ body {
     font-weight: 900;
 }
 
-.panel>button {
+
+
+.panel>.nav_houses>button {
     all: unset;
     color: white;
     font-weight: 900;
@@ -103,7 +106,7 @@ body {
     transition: .4s;
 }
 
-.panel>button:hover {
+.panel>.nav_houses>button:hover {
     background-color: var(--color-golden-yellow);
     color: black;
 }
@@ -115,10 +118,12 @@ body {
     object-position: top;
     transition: .4s;
     filter: grayscale(100%);
+    transform: scale(1);
 }
 
 .card:hover>img {
     filter: none;
+    transform: scale(1.05);
 }
 
 .card:hover>h2 {
@@ -136,4 +141,24 @@ body {
 
 .cards>.dummy {
     flex-grow: 1;
+}
+
+.nav_houses {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 834px) {
+    .nav_houses {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .panel>.nav_houses>button {
+        margin: 1rem;
+    }
+
+    .panel>.nav_houses>button:last-child {
+        margin-bottom: 4rem;
+    }
 }
