@@ -1,21 +1,34 @@
-# React : Atelier "fil rouge" Harry Potter
-![Apercu du resultat final](https://github.com/kpeset/hp-support-for-react/blob/main/public/github_pictures/title_poudlard.JPG?raw=true)
-
+# React : Appeler notre API dynamiquement
 
 ## Objectif de l'atelier
-Nous utiliserons cet atelier "fil rouge" lors de nos group support. C'est sur cette applications que nous testerons les fonctionnalités React que l'on va apprendre lors de notre projet 2.
+Lors de cet atelier, nous avons vu comment utiliser les routes de notre API de façon dynamique.
+Précédemment, seuls les élèves de Griffondor étaient affichés. Nous avons donc crée un bouton pour chaque maison de Poudlard.
 
-## Utilisation
-Chaque fois que nous allons coder une feature, nous allons créer une branche spécifique.
-De cette façon, vous pourrez aller de branches en branches pour voir le code que l'on a crée et aussi l'analyser.
-Je vous invite aussi à lire le Readme de chaque branche.
+## Explication du code
+### La requête API
+Nous allons exécuter la même fonction à la différence que la route de l'API sera différente.
+On pourrait se dire que l'on pourrait créer une fonction de requête API pour chaque maison de Poudlard. Après tout, il n'y en a que quatre. Mais imaginons que ce n'était pas quatre maison, mais des centaines? Pour palier à ça, nous allons écrire notre route de la façon suivante :
 
-## Les branches
-Voici le détail de chacune des branches :
-- **step_01** : [**React - Notre premiere requête API**](https://github.com/kpeset/hp-support-for-react/tree/step_01)
+```
+.get(`https://hp-api.onrender.com/api/characters/house/${house}`)
+```
 
-## Fonctionnalités actuelles
-### 1ère itération
-- Créer une requête API
-- Ajout d'un bouton qui nous permet d'afficher tous les élèves de Griffondor dans des cartes
-- Affiche uniquement les personnages qui possèdent une photo
+Nous avons utiliser `${house}` dans l'url. La variable house sera dynamique.
+**Attention** : N'oubliez pas d'entourer l'url avec des **backtick** !
+
+Dans notre url, `${house}` fait référence à la variable suivante :
+```
+const house = event.target.name
+```
+
+### Création des boutons
+
+La variable `house` se réfère au nom des boutons sur lesquels nous appuyons lorsque la fonction `getCharacters` est exécutée :
+
+```
+<button name="hufflepuff" onClick={getCharacters}>POUFSOUFFLE</button>
+```
+
+Si je clique sur ce bouton, l'url de notre API sera `https://hp-api.onrender.com/api/characters/house/hufflepuff`.
+
+
