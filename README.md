@@ -13,9 +13,13 @@ Je vous invite aussi à lire le Readme de chaque branche.
 ## Les branches
 Voici le détail de chacune des branches :
 - **step_01** : [**React - Notre premiere requête API**](https://github.com/kpeset/hp-support-for-react/tree/step_01)
+- **step_02** : [**React - Appeler notre API dynamiquement**](https://github.com/kpeset/hp-support-for-react/tree/step_02)
 
 ## Fonctionnalités actuelles
 ### 1ère itération
 - Créer une requête API
 - Ajout d'un bouton qui nous permet d'afficher tous les élèves de Griffondor dans des cartes
 - Affiche uniquement les personnages qui possèdent une photo
+
+### 2ème itération
+- Créer un bouton par maison de Poudlard, pour afficher les étudiants de manière filtrée.
