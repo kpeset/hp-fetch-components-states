@@ -46,10 +46,6 @@ header > h1 {
   font-size: 4rem;
 }
 
-header {
-  margin-bottom: 4rem;
-}
-
 header > nav {
   color: white;
   display: flex;
@@ -65,7 +61,7 @@ header > nav > ul {
   justify-content: space-between;
 }
 
-header > nav > ul > li:hover {
+header > nav > ul > li > a:hover {
   color: var(--color-golden-yellow);
   cursor: pointer;
 }
@@ -78,22 +74,27 @@ header > nav > .line_nav {
   background-color: white;
 }
 
-.homepage_content > .panel > h2 {
+header > nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.houses_content > .panel > h2 {
   font-family: var(--font-bluu-bold);
   font-size: 2rem;
   padding: 4rem;
   color: white;
 }
 
-.homepage_content > .panel {
+.houses_content > .panel {
   margin: 0 auto;
 }
 
-.homepage_content > .panel > p {
+.houses_content > .panel > p {
   color: white;
 }
 
-.homepage_content > .panel {
+.houses_content > .panel {
   background-color: var(--color-light-blue);
   max-width: 80rem;
   min-width: auto;
@@ -121,6 +122,11 @@ header > nav > .line_nav {
 .card > p {
   font-family: var(--font-sofias);
   font-weight: 900;
+}
+
+.houses_content {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .panel > .nav_houses > button {
@@ -158,6 +164,10 @@ header > nav > .line_nav {
 
 .card:hover > h2 {
   color: #430404;
+}
+
+h1 {
+  color: white;
 }
 
 .cards {
