@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CharacterCard from "../components/CharacterCard";
+import { Link } from "react-router-dom";
 
 export default function Houses() {
   const [data, setData] = useState([]);
@@ -14,6 +15,14 @@ export default function Houses() {
         setData(response.data);
       });
   };
+
+  useEffect(() => {
+    axios
+      .get(`https://hp-api.onrender.com/api/characters/`)
+      .then((response) => {
+        setData(response.data);
+      });
+  }, []);
 
   return (
     <section className="houses_content">
@@ -39,11 +48,12 @@ export default function Houses() {
         </div>
       </div>
       <div className="cards">
-        {data.map(
-          (character) =>
-            character.image && (
+        {data.map((character) =>
+          character.image ? (
+            <Link key={character.id} to={`/character/${character.id}`}>
               <CharacterCard key={character.id} character={character} />
-            )
+            </Link>
+          ) : null
         )}
       </div>
     </section>
