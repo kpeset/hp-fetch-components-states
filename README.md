@@ -1,34 +1,41 @@
-# React : Appeler notre API dynamiquement
+# React : Création de nos routes
 
 ## Objectif de l'atelier
-Lors de cet atelier, nous avons vu comment utiliser les routes de notre API de façon dynamique.
-Précédemment, seuls les élèves de Griffondor étaient affichés. Nous avons donc crée un bouton pour chaque maison de Poudlard.
+Lors de cet atelier, nous avons vu comment créer des routes et comment les intégrer à notre navbar.
 
 ## Explication du code
-### La requête API
-Nous allons exécuter la même fonction à la différence que la route de l'API sera différente.
-On pourrait se dire que l'on pourrait créer une fonction de requête API pour chaque maison de Poudlard. Après tout, il n'y en a que quatre. Mais imaginons que ce n'était pas quatre maison, mais des centaines? Pour palier à ça, nous allons écrire notre route de la façon suivante :
+### BrowserRouter
+La première étape consiste à signaler à notre application que l'on va utiliser des routes. Pour cela, nous allons utiliser `BrowserRouter` dans notre fichier `App.jsx` de la façon suivante :
 
 ```
-.get(`https://hp-api.onrender.com/api/characters/house/${house}`)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
 ```
 
-Nous avons utiliser `${house}` dans l'url. La variable house sera dynamique.
-**Attention** : N'oubliez pas d'entourer l'url avec des **backtick** !
+Maintenant, tous les enfants de `App.jsx` seront concernés par le router.
 
-Dans notre url, `${house}` fait référence à la variable suivante :
-```
-const house = event.target.name
-```
+### Structure de notre application
 
-### Création des boutons
-
-La variable `house` se réfère au nom des boutons sur lesquels nous appuyons lorsque la fonction `getCharacters` est exécutée :
+C'est maintenant à travers le fichier `App.jsx` que nous allons définir la structure de notre application. Notre application aura un composant `header` dans lequel sera affiché le titre du site ainsi que la barre de navigation.
+Nous aurons aussi un composant `content` qui affichera dynamiquement nos différentes pages :
 
 ```
-<button name="hufflepuff" onClick={getCharacters}>POUFSOUFFLE</button>
+function App() {
+  return (
+    <>
+      <Header />
+      <Content />
+    </>
+  );
+}
 ```
+**Important :** Nous aurions pu ajouter d'autre choses à notre structure (un footer, des sections pour les annonceurs ...).
 
-Si je clique sur ce bouton, l'url de notre API sera `https://hp-api.onrender.com/api/characters/house/hufflepuff`.
+
 
 
