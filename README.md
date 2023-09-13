@@ -54,4 +54,35 @@ Ici nous utiliserons le destructuring car nous savons que `useParams()` retourne
 
 **Rappel :** Puisque `useParams` est un hook, il faut d'abord l'importer avant de l'utiliser !
 
+### Récupération de la data
 
+Pour le moment nous n'avons récupéré que l'id du sorcier. Il est temps de faire une requête API pour avoir toutes les informations nécéssaires. Pour cela nous allons utiliser le hook `useEffect` afin de déclencher notre requête API : 
+
+```
+  useEffect(() => {
+    axios
+      .get(`https://hp-api.onrender.com/api/character/${id}`)
+      .then((response) => {
+        setData(response.data[0]);
+      });
+  }, []);
+```
+
+Le hook useEffect a pour utilité qu'à chaque fois que le composant est monté (c'est à dire lorsqu'il est exécuté), il va exécuter notre requête API.
+
+**Important:** Dans notre `useEffect` nous avons mis un tableau de dépendance vide `[]`. Néanmoins, cela ne plaira pas forcément à notre ami **eslint**. Pour lui faire plaisir nous pouvons ajouter en dépendance notre `id`.
+De cette façon, le `useEffect` se déclenchera uniquement au moment où l'id subit un changement. C'est un peu complexe dit comme ça, mais nous verrons ça plus en profondeur avec un autre exemple.
+
+Maintenant, il ne nous reste plus qu'à afficher les informations que nous désirons :
+
+```
+ return (
+    data && (
+      <div>
+        <p>{data.name}</p>
+        <img src={data.image} alt={data.name} />
+      </div>
+    )
+  );
+}
+```
