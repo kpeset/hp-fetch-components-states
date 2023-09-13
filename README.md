@@ -15,6 +15,7 @@ Voici le détail de chacune des branches :
 - **step_01** : [**React - Notre premiere requête API**](https://github.com/kpeset/hp-support-for-react/tree/step_01)
 - **step_02** : [**React - Appeler notre API dynamiquement**](https://github.com/kpeset/hp-support-for-react/tree/step_02)
 - **step_03** : [**React - Création de nos routes**](https://github.com/kpeset/hp-support-for-react/tree/step_03)
+- **step_04** : [**React - Création d'une route dynamique**](https://github.com/kpeset/hp-support-for-react/tree/step_04)
 
 ## Fonctionnalités actuelles
 ### 1ère itération
@@ -28,3 +29,8 @@ Voici le détail de chacune des branches :
 ### 3ème itération
 - Création de plusieurs pages
 - Créatiion des routes
+
+### 4ème itération
+- Création d'un route dynamique pour les sorciers
+- Utilisation des params
+- Utilisation du useEffect
