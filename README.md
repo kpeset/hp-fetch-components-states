@@ -30,3 +30,13 @@ Pour permettre à l'utilisateur d'accéder aux détails d'un personnage de Poudl
 ```
 **Rappel :** Ici nous avons utilisé la méthode de tableau `map` pour boucler sur la data que nous recevons via notre API. Consultez cette [**branche**](https://github.com/kpeset/hp-support-for-react/tree/step_01) pour un rappel.
 
+Ici, chaque `CharacterCard` que nous allons générer via notre boucle, sera entourée par un `Link` :
+
+```
+<Link key={character.id} to={`/character/${character.id}`}>
+```
+
+Lorsque nous cliquerons sur notre carte, nous serons rediriger vers la route `/character/${character.id}`. Par exemple, notre lien ressemblera à ceci : `/character/4c7e6819-a91a-45b2-a454-f931e4a7cce3`.
+
+**Note :** Le composant `Link` sera répété autant de fois qu'il y a de sorciers. C'est pour cette raison que nous lui avons donné une clé à ce composant afin d'éviter les erreurs dans la console.
+
