@@ -1,34 +1,32 @@
-# React : Appeler notre API dynamiquement
+# React : Création d'une route dynamique
 
 ## Objectif de l'atelier
-Lors de cet atelier, nous avons vu comment utiliser les routes de notre API de façon dynamique.
-Précédemment, seuls les élèves de Griffondor étaient affichés. Nous avons donc crée un bouton pour chaque maison de Poudlard.
+Lors de cet atelier, nous avons vu comment créer une route dynamique qui enverra l'utilisateur vers une page dédiée au sorcier sur lequel nous cliquerons dans la page "Les maisons".
+Nous utiliserons alors les params et son hook `useParams`, mais aussi le hook `useEffect` de react.
 
 ## Explication du code
-### La requête API
-Nous allons exécuter la même fonction à la différence que la route de l'API sera différente.
-On pourrait se dire que l'on pourrait créer une fonction de requête API pour chaque maison de Poudlard. Après tout, il n'y en a que quatre. Mais imaginons que ce n'était pas quatre maison, mais des centaines? Pour palier à ça, nous allons écrire notre route de la façon suivante :
+### Création de la route
+Comme nous l'avons vu précédemment, nous allons ajouter notre route depuis le composant `content.jsx` :
 
 ```
-.get(`https://hp-api.onrender.com/api/characters/house/${house}`)
+<Route path="/character/:id" element={<CharacterDetails />} />
 ```
 
-Nous avons utiliser `${house}` dans l'url. La variable house sera dynamique.
-**Attention** : N'oubliez pas d'entourer l'url avec des **backtick** !
+Cette route aura un param : `:id`. Donc si nous utilisons le chemin  `/character/3873625562`, cela nous conduira sur la page `CharacterDetails`.
 
-Dans notre url, `${house}` fait référence à la variable suivante :
-```
-const house = event.target.name
-```
 
-### Création des boutons
+### Création du lien
 
-La variable `house` se réfère au nom des boutons sur lesquels nous appuyons lorsque la fonction `getCharacters` est exécutée :
+Pour permettre à l'utilisateur d'accéder aux détails d'un personnage de Poudlard, nous devons créer des liens dans notre composant **Houses.jsx**, dans la partie ou nous créons les cartes de tous les élèves.
 
 ```
-<button name="hufflepuff" onClick={getCharacters}>POUFSOUFFLE</button>
+{data.map((character) =>
+  character.image ? (
+    <Link key={character.id} to={`/character/${character.id}`}>
+      <CharacterCard key={character.id} character={character} />
+    </Link>
+  ) : null
+)}
 ```
-
-Si je clique sur ce bouton, l'url de notre API sera `https://hp-api.onrender.com/api/characters/house/hufflepuff`.
-
+**Rappel :** Ici nous avons utilisé la méthode de tableau `map` pour boucler sur la data que nous recevons via notre API. Consultez cette [**branche**](https://github.com/kpeset/hp-support-for-react/tree/step_01) pour un rappel.
 
