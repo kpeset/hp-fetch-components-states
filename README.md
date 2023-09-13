@@ -14,6 +14,7 @@ Je vous invite aussi à lire le Readme de chaque branche.
 Voici le détail de chacune des branches :
 - **step_01** : [**React - Notre premiere requête API**](https://github.com/kpeset/hp-support-for-react/tree/step_01)
 - **step_02** : [**React - Appeler notre API dynamiquement**](https://github.com/kpeset/hp-support-for-react/tree/step_02)
+- **step_03** : [**React - Création de nos routes**](https://github.com/kpeset/hp-support-for-react/tree/step_03)
 
 ## Fonctionnalités actuelles
 ### 1ère itération
