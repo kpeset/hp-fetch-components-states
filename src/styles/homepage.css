@@ -1,0 +1,33 @@
+.homepage_content {
+  background-image: url("/public/wp.png");
+  background-position: center top;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 90vh;
+}
+
+@keyframes shadow-opacity-animation {
+  0% {
+    box-shadow: 0px 0px 150px 50px #ffffff63;
+  }
+  50% {
+    box-shadow: 0px 0px 340px 50px #ffc46c76;
+  }
+  100% {
+    box-shadow: 0px 0px 150px 50px #ffffff63;
+  }
+}
+
+.homepage_content > h3 {
+  font-family: var(--font-bluu-bold);
+  font-size: 4rem;
+
+  color: white;
+  background-color: #bebebea1;
+  text-align: start;
+  padding: 10rem 4rem;
+  animation: shadow-opacity-animation 8s infinite;
+}

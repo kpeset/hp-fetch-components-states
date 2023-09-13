@@ -1,164 +1,221 @@
 @font-face {
-    font-family: "Sofia";
-    src: url('./fonts/sofiapro-light.otf');
+  font-family: "Sofia";
+  src: url("./fonts/sofiapro-light.otf");
 }
 
 @font-face {
-    font-family: "BluuBold";
-    src: url('./fonts/BluuNext-Bold.otf');
+  font-family: "BluuBold";
+  src: url("./fonts/BluuNext-Bold.otf");
 }
 
 :root {
-    --color-bed-of-wine: #4D0505;
-    --color-bed-of-wine-dark: #430404;
-    --color-golden-yellow: #F3C01B;
-    --color-golden-yellow-dark: #B79114;
-    --color-dark-blue: #10141B;
-    --color-light-blue: #242633;
-    --color-light-purple: #514A92;
-    --color-light-grey: #efefef;
-    --font-sofia: "Sofia";
-    --font-bluu-bold: "BluuBold"
+  --color-bed-of-wine: #4d0505;
+  --color-bed-of-wine-dark: #430404;
+  --color-golden-yellow: #f3c01b;
+  --color-golden-yellow-dark: #b79114;
+  --color-dark-blue: #10141b;
+  --color-light-blue: #242633;
+  --color-light-purple: #514a92;
+  --color-light-grey: #efefef;
+  --font-sofia: "Sofia";
+  --font-bluu-bold: "BluuBold";
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-sofia);
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-sofia);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+p {
+  color: white;
 }
 
 body {
-    background-color: var(--color-dark-blue);
+  background-color: var(--color-dark-blue);
 }
 
-.homepage_header>h1 {
-    background-color: var(--color-light-blue);
-    color: white;
-    padding: 40px;
-    font-family: var(--font-bluu-bold);
-    font-weight: bolder;
-    font-size: 4rem;
+header {
+  background-color: var(--color-light-blue);
 }
 
-.homepage_header {
-    margin-bottom: 4rem;
+header > h1 {
+  background-color: var(--color-light-blue);
+  color: white;
+  padding: 40px;
+  font-family: var(--font-bluu-bold);
+  font-weight: bolder;
+  font-size: 4rem;
 }
 
-.homepage_content>.panel>h2 {
-    font-family: var(--font-bluu-bold);
-    font-size: 2rem;
-    padding: 4rem;
-    color: white;
+header > nav {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-bottom: 3rem;
 }
 
-.homepage_content>.panel {
-    margin: 0 auto;
+header > nav > ul {
+  display: flex;
+  width: 30%;
+  margin: 0 auto;
+  list-style: none;
+  justify-content: space-between;
 }
 
-.homepage_content>.panel>p {
-    color: white;
+header > nav > ul > li > a:hover {
+  color: var(--color-golden-yellow);
+  cursor: pointer;
 }
 
-.homepage_content>.panel {
-    background-color: var(--color-light-blue);
-    max-width: 80rem;
-    min-width: auto;
+header > nav > .line_nav {
+  width: 30%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  height: 2px;
+  background-color: white;
+}
+
+header > nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.houses_content > .panel > h2 {
+  font-family: var(--font-bluu-bold);
+  font-size: 2rem;
+  padding: 4rem;
+  color: white;
+}
+
+.houses_content > .panel {
+  margin: 0 auto;
+}
+
+.houses_content > .panel > p {
+  color: white;
+}
+
+.houses_content > .panel {
+  background-color: var(--color-light-blue);
+  max-width: 80rem;
+  min-width: auto;
 }
 
 .card {
-    background-color: var(--color-light-grey);
-    width: 20rem;
-    height: 30rem;
-    margin-top: 80px;
-    border: 8px solid var(--color-light-grey);
-    cursor: pointer;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    overflow: hidden;
+  background-color: var(--color-light-grey);
+  width: 20rem;
+  height: 30rem;
+  margin-top: 80px;
+  border: 8px solid var(--color-light-grey);
+  cursor: pointer;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  overflow: hidden;
 }
 
-.card>h2 {
-    color: var(--color-dark-blue);
-    background-color: var(--color-light-grey);
-    font-style: italic;
-    margin: 2rem 0;
+.card > h2 {
+  color: var(--color-dark-blue);
+  background-color: var(--color-light-grey);
+  font-style: italic;
+  margin: 2rem 0;
 }
 
-.card>p {
-    font-family: var(--font-sofias);
-    font-weight: 900;
+.card > p {
+  font-family: var(--font-sofias);
+  font-weight: 900;
 }
 
-
-
-.panel>.nav_houses>button {
-    all: unset;
-    color: white;
-    font-weight: 900;
-    background-color: var(--color-light-purple);
-    padding: 16px 40px;
-    border-radius: 300px;
-    margin-top: 40px;
-    margin-bottom: 64px;
-    cursor: pointer;
-    transition: .4s;
+.houses_content {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
-.panel>.nav_houses>button:hover {
-    background-color: var(--color-golden-yellow);
-    color: black;
+.panel > .nav_houses > button {
+  all: unset;
+  color: white;
+  font-weight: 900;
+  background-color: var(--color-light-purple);
+  padding: 16px 40px;
+  border-radius: 300px;
+  margin-top: 40px;
+  margin-bottom: 64px;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
-.card>img {
-    width: 100%;
-    height: 20rem;
-    object-fit: cover;
-    object-position: top;
-    transition: .4s;
-    filter: grayscale(100%);
-    transform: scale(1);
+.panel > .nav_houses > button:hover {
+  background-color: var(--color-golden-yellow);
+  color: black;
 }
 
-.card:hover>img {
-    filter: none;
-    transform: scale(1.05);
+.card > img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  object-position: top;
+  transition: 0.4s;
+  filter: grayscale(100%);
+  transform: scale(1);
 }
 
-.card:hover>h2 {
-    color: #430404;
+.card:hover > img {
+  filter: none;
+  transform: scale(1.05);
+}
+
+.card p {
+  color: black;
+}
+
+.card:hover > h2 {
+  color: #430404;
+}
+
+h1 {
+  color: white;
 }
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 80rem;
-    min-width: auto;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 80rem;
+  min-width: auto;
+  margin: 0 auto;
 }
 
-.cards>.dummy {
-    flex-grow: 1;
+.cards > .dummy {
+  flex-grow: 1;
 }
 
 .nav_houses {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @media (max-width: 834px) {
-    .nav_houses {
-        flex-direction: column;
-        align-items: center;
-    }
+  .nav_houses {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .panel>.nav_houses>button {
-        margin: 1rem;
-    }
+  .panel > .nav_houses > button {
+    margin: 1rem;
+  }
 
-    .panel>.nav_houses>button:last-child {
-        margin-bottom: 4rem;
-    }
+  .panel > .nav_houses > button:last-child {
+    margin-bottom: 4rem;
+  }
+
+  header > nav > ul {
+    flex-direction: column;
+  }
 }
