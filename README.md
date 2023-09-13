@@ -40,3 +40,18 @@ Lorsque nous cliquerons sur notre carte, nous serons rediriger vers la route `/c
 
 **Note :** Le composant `Link` sera répété autant de fois qu'il y a de sorciers. C'est pour cette raison que nous lui avons donné une clé à ce composant afin d'éviter les erreurs dans la console.
 
+
+### Création de la page
+
+Pour le moment, notre page `CharacterDetails` n'affiche pas grand chose. Dans un premier temps, il est impératif de récupérer les params de notre url : `/character/4c7e6819-a91a-45b2-a454-f931e4a7cce3`.
+Pour cela, nous allons utiliser le hook `useParams` :
+
+```
+const { id } = useParams();
+```
+
+Ici nous utiliserons le destructuring car nous savons que `useParams()` retourne un objet. De cette façon, nous pouvons récupérer les params qui nous intéressent.
+
+**Rappel :** Puisque `useParams` est un hook, il faut d'abord l'importer avant de l'utiliser !
+
+
