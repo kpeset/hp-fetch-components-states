@@ -1,4 +1,4 @@
-# React : Création d'une route dynamique
+# React : Harry Potter
 
 ## Objectif de l'atelier
 Nous utiliserons cet atelier "fil rouge" lors de nos group support. C'est sur cette applications que nous testerons les fonctionnalités React que l'on va apprendre lors de notre projet 2.
