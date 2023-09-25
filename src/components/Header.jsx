@@ -14,6 +14,9 @@ export default function Header() {
             <Link to="/maisons">Les maisons de Poudlard</Link>
           </li>
           <li>
+            <Link to="/favorites">Mes favoris</Link>
+          </li>
+          <li>
             <Link to="/contact">Nous contacter</Link>
           </li>
         </ul>

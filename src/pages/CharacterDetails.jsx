@@ -15,13 +15,23 @@ export default function CharacterDetails() {
       });
   }, [id]);
 
-  console.log(data);
+  const addCharacterToFavorites = (id) => {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (!favorites.includes(id)) {
+      favorites.push(id);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+  };
 
   return (
     data && (
       <div className="character_content">
         <p>{data.name}</p>
         <img src={data.image} alt={data.name} />
+        <button onClick={() => addCharacterToFavorites(data.id)}>
+          Ajouter aux favoris
+        </button>
       </div>
     )
   );
