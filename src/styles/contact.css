@@ -1,0 +1,32 @@
+.contact_content {
+  background-image: url("/wp_mail.png");
+  background-position: center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 90vh;
+}
+
+.contact_content > .my_form {
+  background-color: #000000a1;
+}
+
+.contact_content > .my_form > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_content > .my_form > form > input {
+  all: unset;
+}
+
+.contact_content > .my_form > form > input[type="text"],
+.contact_content > .my_form > form > input[type="email"] {
+  border: 1px solid yellow;
+}
+
+.contact_content > .my_form > form > input[type="text"]:focus + .my_form {
+  border: 2px solid red;
+}

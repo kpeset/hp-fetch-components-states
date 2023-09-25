@@ -19,7 +19,7 @@ export default function CharacterDetails() {
 
   return (
     data && (
-      <div>
+      <div className="character_content">
         <p>{data.name}</p>
         <img src={data.image} alt={data.name} />
       </div>

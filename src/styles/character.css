@@ -1,0 +1,19 @@
+.character_content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+}
+
+.character_content > img {
+  width: 20rem;
+  height: 30rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+.character_content > p {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
