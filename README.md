@@ -82,3 +82,34 @@ Nous allons utiliser la méthode `Promise.all` qui nous permet de vérifier que 
       setData(responses);
     });
 ```
+
+Puis maintenant que nous avons notre data, nous pouvons boucler dessus dans le rendu :
+```
+  {data.map((character) => (
+        <div key={character.data[0].id} className="favorites_result">
+          <CharacterCard character={character.data[0]} />
+          <button onClick={() => removeFavorite(character.data[0].id)}>
+            Supprimer des favoris
+          </button>
+        </div>
+      ))}
+```
+
+Donc nous allons afficher le composant `CharacterCard` avec en props les datas que nous avons reçus.
+
+Nous ajoutons aussi un bouton supprimer qui va déclencher la fonction `removeFavorite` qui prendra l'id sur character en paramètre.
+
+```
+  const removeFavorite = (id) => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const updatedFavorites = favorites.filter((favorite) => favorite !== id);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    window.location.reload();
+  };
+```
+
+Pareil que dans la fonction qui nous permet d'ajouter un film en favoris, nous avons une variable favorites.
+Pour supprimer un id du `locatStorage` nous allons utiliser la méthode de tableau `filter`. Nous allons mettre dans un nouveau tableau `updatedFavorites` tous les id qui ne sont pas égal à celui que nous mettons en paramètre.
+Puis nous mettons ce nouveau tableau dans notre localStorage.
+
+Pour finir on execute la fonction javascript `window.location.reload()` qui permet de refresh la page.
