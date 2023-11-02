@@ -5,7 +5,7 @@ Lors de cet atelier, nous avons vu comment créer des routes et comment les int�
 
 ## Explication du code
 ### BrowserRouter
-La première étape consiste à signaler à notre application que l'on va utiliser des routes. Pour cela, nous allons utiliser `BrowserRouter` dans notre fichier `App.jsx` de la façon suivante :
+La première étape consiste à signaler à notre application que l'on va utiliser des routes. Pour cela, nous allons utiliser `BrowserRouter` dans notre fichier `main.jsx` de la façon suivante :
 
 ```
 ReactDOM.createRoot(document.getElementById("root")).render(
